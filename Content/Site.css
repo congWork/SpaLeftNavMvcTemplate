@@ -63,6 +63,7 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     background-color: #ff9800 !important;
     color: #ffffff !important;
 }
+
 /*-------my css------*/
 .boxWithTMargin {
     margin-top: 20px;
@@ -101,10 +102,11 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     z-index: 1029;
     -webkit-transition: top linear 0.7s;
     transition: top linear 0.7s;
-    top: 62px;
+    top: 64px;
     -webkit-transition-delay: 0.3s; /* Safari */
     transition-delay: 0.3s;
 }
+
 
 .myGlobalTopLoading.ng-hide {
   top: -100px;
@@ -112,4 +114,9 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
 .myGlobalTopLoading.ng-hide-add,
 .myGlobalTopLoading.ng-hide-remove {
   display: block!important;
+}
+@media screen and (max-width:992px) {
+    .myGlobalTopLoading {
+         top: 48px;
+    }
 }
