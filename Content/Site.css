@@ -1,0 +1,115 @@
+﻿
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select {
+    max-width: 280px;
+}
+
+#map {
+        height: 100%;
+      }
+    
+/*------------overwrite angular csss*/
+md-sidenav {
+    z-index: 99999; /*--should be always on the top layer*/
+}
+md-backdrop._md-sidenav-backdrop {
+    z-index: 99999;
+}
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: #2196f3;
+    color: rgba(255, 255, 255, 0.87);
+}
+a.md-default-theme:not(.md-button), a:not(.md-button) {
+    color: #212121;
+}
+a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
+    color: #757575;
+}
+/*-----customized css for angular---*/
+.md-textIcon {
+    color: #ffffff !important;
+}
+.md-blue {
+    background-color: #1976d2 !important;
+}
+.md-light-blue {
+    background-color: #2196f3 !important;
+}
+.md-text-color {
+    color: #212121 !important;
+}
+.md-secText-color {
+    color: #757575 !important;
+}
+.md-divider-color {
+    background-color: #bdbdbd !important;
+}
+.md-iconBg {
+    background-color: #ff9800 !important;
+    color: #ffffff !important;
+}
+/*-------my css------*/
+.boxWithTMargin {
+    margin-top: 20px;
+}
+.boxWithBMargin {
+    margin-bottom: 20px;
+}
+.boxWithMargin{
+    margin: 20px auto;
+    
+}
+.boxWithPadding{
+    padding-bottom:50px;
+    
+}
+.appVersion {
+    color: transparent;
+
+    font-size: 10px;
+}
+.appVersion:hover, .appVersion:focus{
+    color: #c4c4c4;
+    font-size: 12px;
+}
+.myGlobalTopLoading {
+    border-radius: 0;
+    display: block;
+    padding: 5px 0;
+    filter: alpha(opacity=80); 
+    opacity: 0.8;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    z-index: 1029;
+    -webkit-transition: top linear 0.7s;
+    transition: top linear 0.7s;
+    top: 62px;
+    -webkit-transition-delay: 0.3s; /* Safari */
+    transition-delay: 0.3s;
+}
+
+.myGlobalTopLoading.ng-hide {
+  top: -100px;
+}
+.myGlobalTopLoading.ng-hide-add,
+.myGlobalTopLoading.ng-hide-remove {
+  display: block!important;
+}
