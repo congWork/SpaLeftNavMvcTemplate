@@ -40,6 +40,11 @@ a.md-default-theme:not(.md-button), a:not(.md-button) {
 a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     color: #757575;
 }
+.navbar-header .md-toolbar-tools, .navbar-header md-toolbar {
+    min-height: 48px !important;
+    height: 48px !important;
+    max-height: 48px !important;
+}
 /*-----customized css for angular---*/
 .md-textIcon {
     color: #ffffff !important;
@@ -102,7 +107,7 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     z-index: 1029;
     -webkit-transition: top linear 0.7s;
     transition: top linear 0.7s;
-    top: 64px;
+    top: 48px;
     -webkit-transition-delay: 0.3s; /* Safari */
     transition-delay: 0.3s;
 }
@@ -115,8 +120,7 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
 .myGlobalTopLoading.ng-hide-remove {
   display: block!important;
 }
+
 @media screen and (max-width:992px) {
-    .myGlobalTopLoading {
-         top: 48px;
-    }
+
 }
