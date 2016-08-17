@@ -10,6 +10,17 @@
         var redirect = function () {
 
         };
+        var getInitData = [
+          'dataServices', 'sharedServices',
+          function (dataServices, sharedServices) {
+              sharedServices.setIsProcessing(true);
+              var result = null;
+              //example
+             // result=dataServices.getLandingPageContents();
+              return result;
+
+          }
+        ];
 
         $urlMatcherFactoryProvider.caseInsensitive(true);
         $urlMatcherFactoryProvider.strictMode(false);
@@ -24,6 +35,9 @@
                         value: null,
                         squash: true
                     }
+                },
+                resolve: {
+                    initData: getInitData
                 },
                 templateUrl: "Content/views/home.html?v=" + appConfig.appVersion,
                 controller: "homeController",

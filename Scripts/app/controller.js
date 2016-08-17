@@ -4,14 +4,20 @@
     .controller("baseController", fnBaseCtrl)
     .controller("homeController", fnHomeCtrl);
 
-    fnBaseCtrl.$inject = ['appConfig', '$mdSidenav','$scope'];
-    function fnBaseCtrl(appConfig, $mdSidenav,$scope) {
+    fnBaseCtrl.$inject = ['appConfig', '$mdSidenav','$scope','$rootScope'];
+    function fnBaseCtrl(appConfig, $mdSidenav,$scope,$rootScope) {
       
 
         //init
-        $scope.baseSharedObj = {
-            appVersion : appConfig.appVersion
+          $scope.baseSharedObj = {
+            appVersion: appConfig.appVersion,
+            isLoading: false
         };
+        $rootScope.$on("isProcessingData",
+               function (event, args) {
+                   $scope.baseSharedObj.isLoading = args;
+               }
+        );
        
        $scope.toggleLeft = function (navId) {
             $mdSidenav(navId)
