@@ -45,6 +45,12 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     height: 48px !important;
     max-height: 48px !important;
 }
+.md-scroll-mask {
+    z-index: 1031 !important;
+}
+.md-dialog-container {
+    z-index: 1032 !important;
+}
 /*-----customized css for angular---*/
 .md-textIcon {
     color: #ffffff !important;

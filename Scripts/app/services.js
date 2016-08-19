@@ -28,6 +28,11 @@
         shareScope.setIsProcessing = function (processingP) {
             $rootScope.$broadcast('isProcessingData', processingP);
         };
+
+        shareScope.displayErrorModal = function (errorMessageP) {
+            $rootScope.$broadcast('displayErrorModal', errorMessageP);
+        };
+
         return shareScope;
     };
 
