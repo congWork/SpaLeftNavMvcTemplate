@@ -16,7 +16,7 @@
         //get data from api
         function getSampleData() {
             //return $http.get("api/sample", { cache: false });
-            return $http.get("/Scripts/mySampleApp/testData.json");
+            return $http.get("/Scripts/app/testData.json");
         };
     };
 
