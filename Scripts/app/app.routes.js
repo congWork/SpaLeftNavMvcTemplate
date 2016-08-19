@@ -14,11 +14,17 @@
           'dataServices', 'sharedServices',
           function (dataServices, sharedServices) {
               sharedServices.setIsProcessing(true);
-              var result = null;
+             
               //example
-             // result=dataServices.getLandingPageContents();
-              return result;
-
+              return dataServices.getSampleData()
+                  .then(function(d) {
+                      sharedServices.setIsProcessing(false);
+                          return d;
+                      },
+                      function(d) {
+                          sharedServices.setIsProcessing(false);
+                          return d;
+                      });
           }
         ];
 
