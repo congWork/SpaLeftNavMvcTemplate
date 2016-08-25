@@ -9,7 +9,7 @@
             } else {
                 var pathName = window.location.pathname;
                 result = pathName.match(/\/[A-z0-9]{1,}\/{0,1}/gi)[0];
-                if (result.substr(-1) != '/') result += '/';
+                if (result.substr(-1) !== '/') result += '/';
             }
             return result;
         }
@@ -17,6 +17,7 @@
         document.write("<base href='"+GetBaseName()+"' />");
     </script>
     <meta charset="utf-8"/>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="favicon" href="~/favicon.ico">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
