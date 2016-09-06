@@ -87,7 +87,7 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     
 }
 .boxWithPadding{
-    padding-bottom:50px;
+    padding:55px 0;
     
 }
 .appVersion {
@@ -126,7 +126,27 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
 .myGlobalTopLoading.ng-hide-remove {
   display: block!important;
 }
-
+.myUiContainerAnimation {
+    display: block;
+    height: 100%;
+    opacity: 1;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.myUiContainerAnimation.ng-enter,
+.myUiContainerAnimation.ng-leave {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.myUiContainerAnimation.ng-enter {
+    left: -100%;
+    opacity: 0;
+}
+.myUiContainerAnimation.ng-enter-active {
+    opacity: 1;
+    left: 0;
+}
 @media screen and (max-width:992px) {
 
 }
