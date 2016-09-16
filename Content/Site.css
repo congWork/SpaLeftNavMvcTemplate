@@ -80,7 +80,7 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
     position: fixed;
     right: 10px;
     bottom: 10px;
-    z-index: 1030;
+    z-index: 58;
     cursor: pointer;
     color: #ff9800 !important;
 }
