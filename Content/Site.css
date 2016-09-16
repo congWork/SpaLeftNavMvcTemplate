@@ -76,6 +76,17 @@ a.md-default-theme:hover:not(.md-button), a:hover:not(.md-button) {
 }
 
 /*-------my css------*/
+.scrollToTrigger {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 9999;
+    cursor: pointer;
+    color: #ff9800 !important;
+}
+.scrollToTrigger:hover, .scrollToTrigger:focus{
+    color: #ffa500 !important;
+}
 .boxWithTMargin {
     margin-top: 20px;
 }

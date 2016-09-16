@@ -2,7 +2,13 @@
 <html>
 <head>
     <script>
-        document.write("<base href='" + '@Url.Content("~")' + "' />");
+        (function () {
+            document.write("<base href='" + '@Url.Content("~")' + "' />");
+            // Fix base url being case sensitive
+            var base = document.querySelector("base");
+            var normalized = RegExp(base.href, "i").exec(location.href);
+            base.href = normalized ? normalized[0] : base.href;
+        }());
     </script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +21,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -32,7 +38,14 @@
      <strong>Warning!</strong> Your current browser might not support this website, please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
            </div>
        <![endif]-->
-
+    <div>
+        <a ng-click="scrollToTop()" class="scrollToTrigger" href="#">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-arrow-up fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+        </a>
+    </div>
     <md-sidenav md-component-id="left" md-whiteframe="4" md-is-locked-open="false">
         <md-toolbar class="md-light-blue">
             <h1>Your logo</h1>
@@ -116,7 +129,7 @@
         @Scripts.Render("~/bundles/bootstrap")
 
         <!-- Angular Material Library -->
-        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
         @Scripts.Render("~/bundles/myAngular")
         @RenderSection("scripts", required: false)

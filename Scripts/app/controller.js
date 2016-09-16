@@ -5,8 +5,8 @@
         .controller("baseController", fnBaseCtrl)
         .controller("homeController", fnHomeCtrl);
   
-    fnBaseCtrl.$inject = ['appConfig', '$mdSidenav', '$scope', '$rootScope', '$mdDialog'];
-    function fnBaseCtrl(appConfig, $mdSidenav, $scope, $rootScope, $mdDialog) {
+    fnBaseCtrl.$inject = ['appConfig', '$mdSidenav', '$scope', '$rootScope', '$mdDialog','$anchorScroll'];
+    function fnBaseCtrl(appConfig, $mdSidenav, $scope, $rootScope, $mdDialog,$anchorScroll) {
       
         //init
           $scope.baseSharedObj = {
@@ -18,6 +18,7 @@
         $rootScope.$on("isProcessingData",
                function (event, args) {
                    $scope.baseSharedObj.isLoading = args;
+                   console.log("set is processing: " + args);
                }
         );
 
@@ -37,6 +38,10 @@
                 });
        };
 
+       $scope.scrollToTop = function () {
+           $anchorScroll();
+           return false;
+       };
         //functions
        function displayErrorModal(errorMsgP) {
                $mdDialog.show(
@@ -64,13 +69,19 @@
                );
        };
     }
-    fnHomeCtrl.$inject = ['appConfig','$scope'];
-    function fnHomeCtrl(appConfig,$scope) {
+    fnHomeCtrl.$inject = ['appConfig','$scope','initData'];
+    function fnHomeCtrl(appConfig,$scope,initData) {
         var vm = this;
 
         //modify the parent shared variable
         //example: $scope.baseSharedObj.appVersion='new value';
-       // $scope.baseSharedObj.displayErrorModal("sample test error");
+        console.log(initData.data);
+        if (initData) {
+            $scope.baseSharedObj.isLoading = true;
+           
+            $scope.baseSharedObj.displayErrorModal("sample test error");
+        }
+        
     }
 })();
 
