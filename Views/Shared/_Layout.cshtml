@@ -4,10 +4,11 @@
     <script>
         (function () {
             document.write("<base href='" + '@Url.Content("~")' + "' />");
-            // Fix base url being case sensitive
+             // Fix base url being case sensitive
             var base = document.querySelector("base");
-            var normalized = RegExp(base.href, "i").exec(location.href);
-            base.href = normalized ? normalized[0] : base.href;
+            var baseHref = base.href.replace(/\/$/, "");
+            var normalized = RegExp(baseHref, "i").exec(location.href);
+            base.href = normalized ? normalized[0] + "/" : base.href;
         }());
     </script>
     <meta charset="utf-8"/>
